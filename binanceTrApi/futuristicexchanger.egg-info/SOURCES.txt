@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+binanceTrApi/futuristicexchanger.egg-info/PKG-INFO
+binanceTrApi/futuristicexchanger.egg-info/SOURCES.txt
+binanceTrApi/futuristicexchanger.egg-info/dependency_links.txt
+binanceTrApi/futuristicexchanger.egg-info/top_level.txt

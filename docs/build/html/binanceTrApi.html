@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>binanceTrApi package &mdash; TrBinanceApi v0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to TrBinanceApi’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> TrBinanceApi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">binanceTrApi package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-binanceTrApi.BinanceTrService">binanceTrApi.BinanceTrService module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TrBinanceApi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>binanceTrApi package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/binanceTrApi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binancetrapi-package">
+<h1>binanceTrApi package<a class="headerlink" href="#binancetrapi-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-binanceTrApi.BinanceTrService">
+<span id="binancetrapi-binancetrservice-module"></span><h2>binanceTrApi.BinanceTrService module<a class="headerlink" href="#module-binanceTrApi.BinanceTrService" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="binanceTrApi.BinanceTrService.ApiService">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">binanceTrApi.BinanceTrService.</span></code><code class="sig-name descname"><span class="pre">ApiService</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">apiKey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apiSecret</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ApiServiceClass Object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>apiKey</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Given account’s api key.</p></li>
+<li><p><strong>apiSecret</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Given account’s api secret key.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.cancelOrderById">
+<code class="sig-name descname"><span class="pre">cancelOrderById</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orderID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.cancelOrderById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancellation order by Id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>orderID</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Unique orderid taken from BinanceTr.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getAccountInformation">
+<code class="sig-name descname"><span class="pre">getAccountInformation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getAccountInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get account information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getAggregateTrades">
+<code class="sig-name descname"><span class="pre">getAggregateTrades</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startDate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endDate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getAggregateTrades" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get recent trades of given parity from market in given dates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY</p></li>
+<li><p><strong>startDate</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Start date. ex.(5 min ago, 4 hour ago)</p></li>
+<li><p><strong>endDate</strong><strong>(</strong><strong>str</strong><strong>)</strong> – End date. ex.(5 min ago, 4 hour ago)</p></li>
+<li><p><strong>limit</strong><strong>(</strong><strong>int</strong><strong>)</strong> – Number of recent trades to be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getAllOpenBuyOrders">
+<code class="sig-name descname"><span class="pre">getAllOpenBuyOrders</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getAllOpenBuyOrders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all open buy orders from account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY.</p></li>
+<li><p><strong>limit</strong><strong>(</strong><strong>int</strong><strong>)</strong> – Give the limit to see how many order will be shown.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getAllOpenOrders">
+<code class="sig-name descname"><span class="pre">getAllOpenOrders</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getAllOpenOrders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all open orders from account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY.</p></li>
+<li><p><strong>limit</strong><strong>(</strong><strong>int</strong><strong>)</strong> – Give the limit to see how many order will be shown.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getAllOpenSellOrders">
+<code class="sig-name descname"><span class="pre">getAllOpenSellOrders</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getAllOpenSellOrders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all open sell orders from account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY.</p></li>
+<li><p><strong>limit</strong><strong>(</strong><strong>int</strong><strong>)</strong> – Give the limit to see how many order will be shown.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getAllOrders">
+<code class="sig-name descname"><span class="pre">getAllOrders</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getAllOrders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all orders from account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY.</p></li>
+<li><p><strong>limit</strong><strong>(</strong><strong>int</strong><strong>)</strong> – Give the limit to see how many order will be shown.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getAssetInformation">
+<code class="sig-name descname"><span class="pre">getAssetInformation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">assetName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getAssetInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get asset information from account of given token.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>assetName</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name to fetch information.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getKline">
+<code class="sig-name descname"><span class="pre">getKline</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startDate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endDate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getKline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get market data of given parity from market in given dates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY</p></li>
+<li><p><strong>startDate</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Start date. ex.(5 min ago, 4 hour ago)</p></li>
+<li><p><strong>endDate</strong><strong>(</strong><strong>str</strong><strong>)</strong> – End date. ex.(5 min ago, 4 hour ago)</p></li>
+<li><p><strong>limit</strong><strong>(</strong><strong>int</strong><strong>)</strong> – Number of recent trades to be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getOrderBook">
+<code class="sig-name descname"><span class="pre">getOrderBook</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getOrderBook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get order book from account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY.</p></li>
+<li><p><strong>limit</strong><strong>(</strong><strong>int</strong><strong>)</strong> – Give the limit to see how many order will be shown.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getOrderById">
+<code class="sig-name descname"><span class="pre">getOrderById</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orderID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getOrderById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get order book by Id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>orderID</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Unique orderid taken from BinanceTr.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getRecentTrade">
+<code class="sig-name descname"><span class="pre">getRecentTrade</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getRecentTrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get recent trades of given parity from market.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY</p></li>
+<li><p><strong>limit</strong><strong>(</strong><strong>int</strong><strong>)</strong> – Number of recent trades to be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.getSymbol">
+<code class="sig-name descname"><span class="pre">getSymbol</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.getSymbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetchs market data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.postBuyMarketOrder">
+<code class="sig-name descname"><span class="pre">postBuyMarketOrder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origQuantity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.postBuyMarketOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Post buy market order from account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY.</p></li>
+<li><p><strong>origQuoteQuantity</strong><strong>(</strong><strong>float</strong><strong>)</strong> – Quantity of coin for the order.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.postNewLimitOrder">
+<code class="sig-name descname"><span class="pre">postNewLimitOrder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origQuoteQuantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.postNewLimitOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Post new limit order from account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY.</p></li>
+<li><p><strong>side</strong><strong>(</strong><strong>str</strong><strong>)</strong> – BUY or SELL, usage with uppercase “BUY” “SELL”.</p></li>
+<li><p><strong>origQuoteQuantity</strong><strong>(</strong><strong>float</strong><strong>)</strong> – Quantity of coin for the order.</p></li>
+<li><p><strong>float</strong><strong>)</strong> (<em>price</em><em>(</em><em>int</em><em>,</em>) – Price count.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.postSellMarketOrder">
+<code class="sig-name descname"><span class="pre">postSellMarketOrder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origQuoteQuantity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.postSellMarketOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Post sell market order from account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY.</p></li>
+<li><p><strong>origQuoteQuantity</strong><strong>(</strong><strong>float</strong><strong>)</strong> – Quantity of coin for the order.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.postStopLimitOrder">
+<code class="sig-name descname"><span class="pre">postStopLimitOrder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origQuoteQuantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limitPrice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stopPrice</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.postStopLimitOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Post stop limit orders from account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong><strong>(</strong><strong>str</strong><strong>)</strong> – Coin name with parity. ex. BTC_TRY.</p></li>
+<li><p><strong>side</strong><strong>(</strong><strong>str</strong><strong>)</strong> – BUY or SELL, usage with uppercase “BUY” “SELL”.</p></li>
+<li><p><strong>origQuoteQuantity</strong><strong>(</strong><strong>float</strong><strong>)</strong> – Quantity of coin for the order.</p></li>
+<li><p><strong>float</strong><strong>)</strong> (<em>stopPrice</em><em>(</em><em>int</em><em>,</em>) – Limit price count.</p></li>
+<li><p><strong>float</strong><strong>)</strong> – Stop price count.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="binanceTrApi.BinanceTrService.ApiService.testConnectivity">
+<code class="sig-name descname"><span class="pre">testConnectivity</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#binanceTrApi.BinanceTrService.ApiService.testConnectivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests connectivity with server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(json) Return requested value from api.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to TrBinanceApi’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, futuristicexchanger.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

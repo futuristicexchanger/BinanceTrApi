@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+binanceTrApi/BinanceTrApi.egg-info/PKG-INFO
+binanceTrApi/BinanceTrApi.egg-info/SOURCES.txt
+binanceTrApi/BinanceTrApi.egg-info/dependency_links.txt
+binanceTrApi/BinanceTrApi.egg-info/top_level.txt

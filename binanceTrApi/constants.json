@@ -1,0 +1,10 @@
+
+{
+  "VERSION":"V3",
+  "BASE_URL": "https://www.trbinance.com",
+  "API_URL": "https://api.binance.cc/api/v3",
+  "OrderSide" : {"BUY":"0", "SELL": "1"},
+  "AllOrders": {"All":"-1","Open":"1","History":"2"},
+  "OrderTypes" : {"Limit":"1","Market":"2","Stop_loss":"3","Stop_loss_limit":"4", "Take_profit": "5","Take_profit_limit":"6","Limit_taker":"7"},
+  "OrderStatus" : {"SYSTEM_PROCESSING": "-2", "NEW" : "0", "PARTIALLY_FILLED": "1", "FILLED" : "2", "CANCELED": "3", "PENDING_CANCEL" : "4", "REJECTED" : "5", "EXPIRED" : "6"}
+}
