@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="BinanceTrApi",
-    version="0.0.1",
+    version="0.1.1",
     author="Futuristic Exchanger",
     author_email="futuristic.exchanger@gmail.com",
     description="TRbinance API implementation in python.",
@@ -17,7 +17,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "binanceTrApi"},
-    packages=setuptools.find_packages(where="binanceTrApi"),
-    python_requires=">=3.8",
+    packages=["BinanceTrApi"],
+    package_data = {"BinanceTrApi":["constants.json"]},
+    python_requires=">=3.6",
 )

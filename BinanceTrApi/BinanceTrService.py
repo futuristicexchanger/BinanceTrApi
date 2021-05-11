@@ -1,10 +1,11 @@
-import BinanceTrRequests
+
+from .BinanceTrRequests import sendRequest,sendRequestWithoutAuthorization
+from .UserModel import UserModel as UM
+from .Apihelpers import date_to_milliseconds
 import json
 import sys
 import traceback
-import models.UserModel as UM
-import Apihelpers
-
+import os
 
 class ApiService:
     """
@@ -20,9 +21,12 @@ class ApiService:
         self.__constants()
 
     def __constants(self):
-        with open('constants.json') as json_file:
+        current_dir = os.path.dirname(__file__)
+        target_dir = os.path.abspath(os.path.join(current_dir, "constants.json"))
+
+        with open(target_dir) as json_file:
             self.__constant = json.load(json_file)
-        self.options = UM.UserModel(self.apiKey, self.apiSecret)
+        self.options = UM(self.apiKey, self.apiSecret)
 
     def testConnectivity(self):
         """
@@ -31,7 +35,7 @@ class ApiService:
         :returns: (json) Return requested value from api.
         """
         try:
-            result = BinanceTrRequests.sendRequestWithoutAuthorization("/open/v1/common/time", None, True)
+            result = sendRequestWithoutAuthorization("/open/v1/common/time", None, True)
             return result.json()
 
         except Exception:
@@ -46,7 +50,7 @@ class ApiService:
         :returns: (json) Return requested value from api.
         """
         try:
-            result = BinanceTrRequests.sendRequestWithoutAuthorization("open/v1/common/symbols", None, True)
+            result = sendRequestWithoutAuthorization("open/v1/common/symbols", None, True)
             return result.json()
 
         except Exception:
@@ -65,7 +69,7 @@ class ApiService:
         """
         try:
             params = {"symbol": symbol, "limit": str(limit)}
-            result = BinanceTrRequests.sendRequest("GET", "/open/v1/market/depth", params, True)
+            result = sendRequest("GET", "/open/v1/market/depth", params, True)
             return result
 
         except Exception:
@@ -84,7 +88,7 @@ class ApiService:
         """
         try:
             params = {"symbol": symbol, "limit": str(limit)}
-            result = BinanceTrRequests.sendRequestWithoutAuthorization("/trades", params)
+            result = sendRequestWithoutAuthorization("/trades", params)
             return result.json()
 
         except Exception:
@@ -104,21 +108,22 @@ class ApiService:
         :returns: (json) Return requested value from api.
         """
         try:
+            timestamp = self.testConnectivity()["timestamp"]
             params = {"symbol": symbol, "limit": str(limit)}
             start_ts = None
             end_ts = None
 
-            if startDate:
-                start_ts = Apihelpers.date_to_milliseconds(startDate)
-            end_ts = None
-            if endDate:
-                end_ts = Apihelpers.date_to_milliseconds(endDate)
-
-            if start_ts and end_ts:
-                params["startTime"] = start_ts
-                params["endTime"] = end_ts
-
-            result = BinanceTrRequests.sendRequestWithoutAuthorization("/trades", params)
+            # if startDate:
+            #     start_ts = date_to_milliseconds(startDate)
+            # end_ts = None
+            # if endDate:
+            #     end_ts = date_to_milliseconds(endDate)
+            #
+            # if start_ts and end_ts:
+            params["startTime"] = startDate
+            params["endTime"] = endDate
+            print(params)
+            result = sendRequestWithoutAuthorization("/aggTrades", params)
             return result.json()
 
         except Exception:
@@ -126,7 +131,7 @@ class ApiService:
             errorDetails = "".join(traceback.format_exception(exc_type, exc_obj, exc_tb))
             print(errorDetails)
 
-    def getKline(self, symbol, interval, startDate, endDate, limit=500):
+    def getKline(self, symbol, interval, startDate=None, endDate=None, limit=500):
         """
         Get market data of given parity from market in given dates.
 
@@ -141,17 +146,17 @@ class ApiService:
             params = {"symbol": symbol, "limit": str(limit), "interval": interval}
             start_ts = None
             end_ts = None
-
-            if startDate:
-                start_ts = Apihelpers.date_to_milliseconds(startDate)
-            end_ts = None
-            if endDate:
-                end_ts = Apihelpers.date_to_milliseconds(endDate)
-
-            if start_ts and end_ts:
-                params["startTime"] = start_ts
-                params["endTime"] = end_ts
-            result = BinanceTrRequests.sendRequestWithoutAuthorization("/klines", params)
+            #
+            # if startDate:
+            #     start_ts = date_to_milliseconds(startDate)
+            # end_ts = None
+            # if endDate:
+            #     end_ts = date_to_milliseconds(endDate)
+            #
+            if endDate and startDate:
+                params["startTime"] = startDate
+                params["endTime"] = endDate
+            result = sendRequestWithoutAuthorization("/klines", params)
             return result.json()
 
         except Exception:
@@ -166,7 +171,7 @@ class ApiService:
         :returns: (json) Return requested value from api.
         """
         try:
-            result = BinanceTrRequests.sendRequest("GET", "/open/v1/account/spot", self.options)
+            result = sendRequest("GET", "/open/v1/account/spot", self.options)
             return result
 
         except Exception:
@@ -184,7 +189,7 @@ class ApiService:
         """
         try:
             params = {"asset": assetName}
-            result = BinanceTrRequests.sendRequest("GET", "/open/v1/account/spot/asset", self.options, params)
+            result = sendRequest("GET", "/open/v1/account/spot/asset", self.options, params)
             return result
 
         except Exception:
@@ -202,7 +207,7 @@ class ApiService:
         """
         try:
             params = {"orderID": orderID}
-            result = BinanceTrRequests.sendRequest("GET", "/open/v1/orders/default", self.options, params)
+            result = sendRequest("GET", "/open/v1/orders/default", self.options, params)
             return result
 
         except Exception:
@@ -221,7 +226,7 @@ class ApiService:
         """
         try:
             params = {"symbol": symbol, "limit": str(limit), "type": self.__constant["AllOrders"]["Open"]}
-            result = BinanceTrRequests.sendRequest("GET", "/open/v1/orders", self.options, params)
+            result = sendRequest("GET", "/open/v1/orders", self.options, params)
             return result
 
         except Exception:
@@ -240,7 +245,7 @@ class ApiService:
         """
         try:
             params = {"symbol": symbol, "limit": str(limit)}
-            result = BinanceTrRequests.sendRequest("GET", "/open/v1/orders", self.options, params)
+            result = sendRequest("GET", "/open/v1/orders", self.options, params)
             return result
 
         except Exception:
@@ -260,7 +265,7 @@ class ApiService:
         try:
             params = {"symbol": symbol, "limit": str(limit), "type": self.__constant["AllOrders"]["Open"],
                       "side": self.__constant["OrderSide"]["BUY"]}
-            result = BinanceTrRequests.sendRequest("GET", "/open/v1/orders", self.options, params)
+            result = sendRequest("GET", "/open/v1/orders", self.options, params)
             return result
 
         except Exception:
@@ -280,7 +285,7 @@ class ApiService:
         try:
             params = {"symbol": symbol, "limit": str(limit), "type": self.__constant["AllOrders"]["Open"],
                       "side": self.__constant["OrderSide"]["SELL"]}
-            result = BinanceTrRequests.sendRequest("GET", "/open/v1/orders", self.options, params)
+            result = sendRequest("GET", "/open/v1/orders", self.options, params)
             return result
 
         except Exception:
@@ -303,7 +308,7 @@ class ApiService:
             params = {"symbol": symbol, "side": self.__constant["OrderSide"][side],
                       "type": self.__constant["OrderTypes"]["Limit"], "quantity": str(origQuoteQuantity),
                       "price": str(price)}
-            result = BinanceTrRequests.sendRequest("POST", "/open/v1/orders", self.options, params)
+            result = sendRequest("POST", "/open/v1/orders", self.options, params)
             return result
 
         except Exception:
@@ -323,7 +328,7 @@ class ApiService:
         try:
             params = {"symbol": symbol, "side": self.__constant["OrderSide"]["BUY"],
                       "type": self.__constant["OrderTypes"]["Market"], "quoteOrderQty": str(origQuantity)}
-            result = BinanceTrRequests.sendRequest("POST", "/open/v1/orders", self.options, params)
+            result = sendRequest("POST", "/open/v1/orders", self.options, params)
             return result
 
         except Exception:
@@ -343,7 +348,7 @@ class ApiService:
         try:
             params = {"symbol": symbol, "side": self.__constant["OrderSide"]["SELL"],
                       "type": self.__constant["OrderTypes"]["Market"], "quantity": str(origQuoteQuantity)}
-            result = BinanceTrRequests.sendRequest("POST", "/open/v1/orders", self.options, params)
+            result = sendRequest("POST", "/open/v1/orders", self.options, params)
             return result
 
         except Exception:
@@ -368,7 +373,7 @@ class ApiService:
             params = {"symbol": symbol, "side": self.__constant["OrderSide"][side],
                       "type": self.__constant["OrderTypes"]["Limit"], "quantity": str(origQuoteQuantity),
                       "price": str(limitPrice), "stopPrice": str(stopPrice)}
-            result = BinanceTrRequests.sendRequest("POST", "/open/v1/orders", self.options, params)
+            result = sendRequest("POST", "/open/v1/orders", self.options, params)
             return result
 
         except Exception:
@@ -385,8 +390,8 @@ class ApiService:
         :returns: (json) Return requested value from api.
         """
         try:
-            params = {"orderID": orderID}
-            result = BinanceTrRequests.sendRequest("GET", "/open/v1/orders/cancel", self.options, params)
+            params = {"orderId": str(orderID)}
+            result = sendRequest("POST", "/open/v1/orders/cancel", self.options, params)
             return result
 
         except Exception:

@@ -12,7 +12,7 @@
 
 <p align="center">  
   <a href="https://trbinance.com">
-    <img src="images/logo.png" alt="Logo" width="664" height="233">
+    <img src="https://raw.githubusercontent.com/futuristicexchanger/BinanceTrApi/main/images/logo.png" alt="Logo" width="407" height="324">
   </a>
 
   <h3 align="center"> Tr Binance API </h3>
@@ -59,7 +59,7 @@ Kurulum yönergesi için aşağıdaki adımlar takip edilebilir.
 
   Clone the repo  
   ```shell  
-  git clone https://github.com/myasinsaglam/secpip.git
+  git clone https://github.com/futuristicexchanger/BinanceTrApi
   ```  
   
   In project directory run

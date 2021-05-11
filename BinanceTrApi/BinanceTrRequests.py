@@ -1,19 +1,19 @@
 import requests
-import Apihelpers
+from .Apihelpers import GetRequestUrl,BuildRequest,CreateQueryString,GetTimestamp,date_to_milliseconds
 import sys
 import traceback
 
 
 def sendRequest(method, url, options, parameters=None, cancellationToken="default"):
     try:
-        url = Apihelpers.GetRequestUrl(url, True)
-        urlExtension = str(Apihelpers.CreateQueryString(parameters))
+        url = GetRequestUrl(url, True)
+        urlExtension = str(CreateQueryString(parameters))
         if method == "GET":
-            url = url + str(urlExtension) + "&" + str(Apihelpers.BuildRequest(options.secret, urlExtension))
+            url = url + str(urlExtension) + "&" + str(BuildRequest(options.secret, urlExtension))
             response = requests.get(url, headers={"X-MBX-APIKEY": options.api})
             return response.json()
         elif method == "POST":
-            parameters["signature"] = str(Apihelpers.BuildRequest(options.secret, urlExtension)).split("=")[1]
+            parameters["signature"] = str(BuildRequest(options.secret, urlExtension)).split("=")[1]
             response = requests.post(url, headers={"X-MBX-APIKEY": options.api}, data=parameters)
             return response.json()
 
@@ -25,8 +25,8 @@ def sendRequest(method, url, options, parameters=None, cancellationToken="defaul
 
 def sendRequestWithoutAuthorization(url, parameters=None, baseUrl=False):
     try:
-        url = Apihelpers.GetRequestUrl(url, baseUrl)
-        request = requests.get(url)
+        url = GetRequestUrl(url, baseUrl)
+        request = requests.get(url,parameters)
         return request
 
     except Exception:

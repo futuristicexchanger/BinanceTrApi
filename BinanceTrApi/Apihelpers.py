@@ -2,7 +2,7 @@ import time
 import datetime
 import dateparser
 import pytz
-import models.UserModel as UM
+from .UserModel import UserModel as UM
 import json
 import os
 current_dir = os.path.dirname(__file__)
@@ -42,7 +42,7 @@ def BuildRequest(apiSecret, extension):
     if (extension == None) or (len(extension) == 0):
         extension = "&" + GetTimestamp()
 
-    temp = UM.UserModel("", apiSecret)
+    temp = UM("", apiSecret)
     if (apiSecret != None) or (apiSecret != ""):
         return "signature=" + temp.generate_signature(extension[1:])
 
