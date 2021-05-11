@@ -75,6 +75,28 @@ Kurulum yönergesi için aşağıdaki adımlar takip edilebilir.
   ```shell
   pip install BinanceTrApi
   ```
+  
+### Example usage of some methods:
+
+from BinanceTrApi import BinanceTrService as service
+
+client = service.ApiService("apikey","apisecret")
+
+print(client.testConnectivity())
+a =client.postNewLimitOrder("USDT_TRY", "SELL", 11, 8.90)
+print(a)
+b = client.cancelOrderById(a["data"]["orderId"])
+print(b)
+
+c= client.getAssetInformation("USDT")
+print(c)
+
+# You need to handle timestamp for now, check documentation
+d= client.getAggregateTrades("BTCUSDT",client.testConnectivity()["timestamp"]-1000,client.testConnectivity()["timestamp"],20)
+print(d)
+
+e = client.getKline("BTCUSDT","4h")
+print(e)
 
 
 
