@@ -29,7 +29,8 @@
 * [Getting Started](#getting-started)  
   * [Prerequisites](#prerequisites)  
   * [Installation](#installation)  
-* [License](#license)  
+* [License](#license)
+* [Donation](#donation)
 * [Contact](#developers)  
   
   
@@ -77,27 +78,35 @@ Kurulum yönergesi için aşağıdaki adımlar takip edilebilir.
   ```
   
 ### Example usage of some methods:
+```
 
 from BinanceTrApi import BinanceTrService as service
 
 client = service.ApiService("apikey","apisecret")
 
 print(client.testConnectivity())
+
 a =client.postNewLimitOrder("USDT_TRY", "SELL", 11, 8.90)
+
 print(a)
+
 b = client.cancelOrderById(a["data"]["orderId"])
+
 print(b)
 
 c= client.getAssetInformation("USDT")
+
 print(c)
 
-# You need to handle timestamp for now, check documentation
+#You need to handle timestamp for now, check documentation
 d= client.getAggregateTrades("BTCUSDT",client.testConnectivity()["timestamp"]-1000,client.testConnectivity()["timestamp"],20)
+
 print(d)
 
 e = client.getKline("BTCUSDT","4h")
-print(e)
 
+print(e)
+```
 
 
 
@@ -106,6 +115,11 @@ print(e)
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
+<!-- DONATION -->
+## Donation
+0x0986A6cB0b5b33333383A04AFc58f862e0850c02
+
+You can send ETH and BNB on this BSC address
 
 <!-- DEVELOPERS -->
 ## Developers
