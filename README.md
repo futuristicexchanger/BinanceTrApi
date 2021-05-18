@@ -55,6 +55,10 @@ Kurulum yönergesi için aşağıdaki adımlar takip edilebilir.
 ### Installation  
 
 - #### Firstly Install python 3 and pip.  
+- #### Install dateparser module
+  ```shell
+  pip install dateparser
+  ```
 
 #### Install From Repo
 
