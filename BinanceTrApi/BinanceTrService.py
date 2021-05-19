@@ -69,7 +69,7 @@ class ApiService:
         """
         try:
             params = {"symbol": symbol, "limit": str(limit)}
-            result = sendRequest("GET", "/open/v1/market/depth", params, True)
+            result = sendRequest("GET", "/open/v1/market/depth",self.options, params)
             return result
 
         except Exception:
